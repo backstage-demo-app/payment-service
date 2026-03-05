@@ -1,0 +1,10 @@
+site_name: payment-service
+site_description: Documentation for payment-service
+
+nav:
+  - Home: index.md
+  - API Reference: api.md
+  - Architecture: architecture.md
+
+plugins:
+  - techdocs-core

@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: payment-service
+  description: Core payment processing microservice handling transactions, refunds, and payment method management
+  annotations:
+    github.com/project-slug: backstage-demo-app/payment-service
+    backstage.io/techdocs-ref: dir:.
+  links:
+    - title: GitHub Repository
+      url: https://github.com/backstage-demo-app/payment-service
+      icon: github
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:default/stargate
