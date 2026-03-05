@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: payment-service
-  description: Core payment processing microservice handling transactions, refunds, and payment method management
+  description: Core payment processing microservice — transactions, refunds, stats, and payment method management
   annotations:
     github.com/project-slug: backstage-demo-app/payment-service
     backstage.io/techdocs-ref: dir:.
@@ -12,9 +12,9 @@ metadata:
       icon: github
 spec:
   type: service
-  lifecycle: experimental
-  owner: group:default/stargate
-  system: demo-platform
+  lifecycle: production
+  owner: group:default/paybusters
+  system: system:default/demo-platform
   providesApis:
     - payment-api
 ---
@@ -22,7 +22,7 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: payment-api
-  description: REST API for payment processing — transactions, refunds, and payment method management
+  description: REST API for payment processing — transactions, refunds, stats, and payment method management
   tags:
     - rest
     - payments
@@ -31,7 +31,7 @@ metadata:
 spec:
   type: openapi
   lifecycle: production
-  owner: group:paybusters
-  system: demo-platform
+  owner: group:default/paybusters
+  system: system:default/demo-platform
   definition:
     $text: http://localhost:8080/v3/api-docs.yaml
